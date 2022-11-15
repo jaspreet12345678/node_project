@@ -1,11 +1,20 @@
-console.log("Starting")
+// const { response } = require("express")
+// const request  = require("request")
 
- setTimeout(() => {
-    console.log("3 Second")
-}, 3000);
+// const url ="http://api.weatherstack.com/current?access_key=e84129bc20b99e3b1452c36379b4e3ff&query=42.3605,-71.0596"
 
-setTimeout(() => {
-    console.log("0 Second")
-}, 0000);
+// request({url:url , json: true},(error, response) =>{
+//     console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degrees out." )
+// })
 
-console.log("Stopping")
+var QRCode = require('qrcode')
+const express = require("express")
+const app =express()
+
+app.get("/", (req, res) => {
+    QRCode.toDataURL('I am a pony!', function (err, url) {
+    res.send(`<img src="${url}"/>`)
+    })
+})
+
+app.listen(8000)
