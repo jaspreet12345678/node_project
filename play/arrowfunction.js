@@ -12,9 +12,9 @@
 
 const event = {
     name: 'Jaspreet',
-    guestList: ['Shubham', 'AJay', 'Tarun'],
+    guestList: ['Shubham', 'Ajay', 'Tarun'],
     printGuestList() {
-        console.log('Guest list for ' + this.name)
+        console.log('Guest list for ' + this.name + ' Birthday')
         this.guestList.forEach((guest) => {
             console.log(guest + ' is attending ' + this.name)
         })
